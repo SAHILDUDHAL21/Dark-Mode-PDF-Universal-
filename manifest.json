@@ -1,0 +1,24 @@
+{
+  "name": "Dark Mode PDF (Universal)",
+  "description": "Inverts colors of PDF viewer using overlay filter.by sahil dudhal",
+  "version": "1.2",
+  "manifest_version": 3,
+  "permissions": ["storage", "tabs"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
